@@ -180,4 +180,4 @@ Log levels: `debug`, `info`, `warn`, `error`, `fatal`
 - Keep commits atomic and descriptive  
 
 ## License
-Refer to the parent project’s `LICENSE` file.
+MIT License — see LICENSE file.
