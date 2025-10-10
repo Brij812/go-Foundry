@@ -11,7 +11,6 @@
     "resolveJsonModule": true, // Allow importing JSON files
     "allowJs": true, // Allow JavaScript files alongside TypeScript
     "isolatedModules": true, // Enforce module boundary rules for isolated compilation
-    "verbatimModuleSyntax": true, // Preserve module import/export syntax without rewriting
     "jsx": "react-jsx", // Preserve JSX as is
 
     // Strictness settings

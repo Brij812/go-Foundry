@@ -1,7 +1,14 @@
-import { extendZodWithOpenApi } from "@anatine/zod-openapi";
 import { z } from "zod";
+import { extendZodWithOpenApi } from "@anatine/zod-openapi";
 
-extendZodWithOpenApi(z);
+// Extend Zod with OpenAPI support
+extendZodWithOpenApi(z as any);
 
-export * from "./utils.js";
-export * from "./health.js";
+// Example schema
+export const ZHealthResponse = z.object({
+  status: z.string(),
+  uptime: z.number(),
+});
+
+// Export everything needed for downstream packages
+export { z };

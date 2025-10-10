@@ -1,9 +1,9 @@
 import { extendZodWithOpenApi } from "@anatine/zod-openapi";
-import { z } from "zod";
+import * as z from "@foundry/zod"; // <- use workspace zod
 
-extendZodWithOpenApi(z);
+extendZodWithOpenApi(z.z as any); // z.z because we exported { z } from zod
+
 import { generateOpenApi } from "@ts-rest/open-api";
-
 import { apiContract } from "./contracts/index.js";
 
 type SecurityRequirementObject = {
@@ -17,17 +17,13 @@ export type OperationMapper = NonNullable<
 const hasSecurity = (
   metadata: unknown
 ): metadata is { openApiSecurity: SecurityRequirementObject[] } => {
-  return (
-    !!metadata && typeof metadata === "object" && "openApiSecurity" in metadata
-  );
+  return !!metadata && typeof metadata === "object" && "openApiSecurity" in metadata;
 };
 
 const operationMapper: OperationMapper = (operation, appRoute) => ({
   ...operation,
   ...(hasSecurity(appRoute.metadata)
-    ? {
-        security: appRoute.metadata.openApiSecurity,
-      }
+    ? { security: appRoute.metadata.openApiSecurity }
     : {}),
 });
 
@@ -38,14 +34,11 @@ export const OpenAPI = Object.assign(
       openapi: "3.0.2",
       info: {
         version: "1.0.0",
-        title: "Boilerplate REST API - Documentation",
-        description: "Boilerplate REST API - Documentation",
+        title: "Foundry REST API - Documentation",
+        description: "Foundry REST API - Documentation",
       },
       servers: [
-        {
-          url: "http://localhost:8080",
-          description: "Local Server",
-        },
+        { url: "http://localhost:8080", description: "Local Server" },
       ],
     },
     {
@@ -56,16 +49,8 @@ export const OpenAPI = Object.assign(
   {
     components: {
       securitySchemes: {
-        bearerAuth: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT",
-        },
-        "x-service-token": {
-          type: "apiKey",
-          name: "x-service-token",
-          in: "header",
-        },
+        bearerAuth: { type: "http", scheme: "bearer", bearerFormat: "JWT" },
+        "x-service-token": { type: "apiKey", name: "x-service-token", in: "header" },
       },
     },
   }

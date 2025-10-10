@@ -1,7 +1,7 @@
 {
-  "name": "@boilerplate/zod",
+  "name": "@foundry/zod",
   "version": "1.0.0",
-  "description": "Package which exports all Boilerplate zod schemas and types",
+  "description": "Package which exports all foundry zod schemas and types",
   "type": "module",
   "scripts": {
     "build": "tsc && tsc-alias",
@@ -18,12 +18,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@anatine/zod-openapi": "^2.2.7",
-    "zod": "^3.24.2"
+    "@anatine/zod-openapi": "^2.2.8",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
     "tsc-alias": "^1.8.12",
-    "typescript": "^5.8.2"
+    "typescript": "^5.9.3"
   }
 }

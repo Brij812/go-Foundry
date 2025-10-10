@@ -1,5 +1,5 @@
 {
-  "name": "@boilerplate/openapi",
+  "name": "@foundry/openapi",
   "version": "1.0.0",
   "description": "Generates OpenAPI doc",
   "type": "module",
@@ -20,11 +20,11 @@
   "license": "ISC",
   "dependencies": {
     "@anatine/zod-openapi": "^2.2.7",
-    "@boilerplate/zod": "workspace:*",
+    "@foundry/zod": "workspace:*",
     "@ts-rest/core": "^3.52.1",
     "@ts-rest/open-api": "^3.52.1",
     "ts-pattern": "^5.7.0",
-    "zod": "^3.24.2"
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",

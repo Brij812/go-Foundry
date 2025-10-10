@@ -4,10 +4,11 @@
     "": {
       "name": "go-foundry",
       "dependencies": {
+        "@anatine/zod-openapi": "^2.2.8",
         "@react-email/components": "^0.5.6",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "zod": "^4",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@types/react": "^18.3.26",
@@ -20,15 +21,15 @@
       },
     },
     "packages/openapi": {
-      "name": "@boilerplate/openapi",
+      "name": "@foundry/openapi",
       "version": "1.0.0",
       "dependencies": {
         "@anatine/zod-openapi": "^2.2.7",
-        "@boilerplate/zod": "workspace:*",
+        "@foundry/zod": "workspace:*",
         "@ts-rest/core": "^3.52.1",
         "@ts-rest/open-api": "^3.52.1",
         "ts-pattern": "^5.7.0",
-        "zod": "^3.24.2",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@types/node": "^22.13.14",
@@ -40,25 +41,21 @@
       },
     },
     "packages/zod": {
-      "name": "@boilerplate/zod",
+      "name": "@foundry/zod",
       "version": "1.0.0",
       "dependencies": {
-        "@anatine/zod-openapi": "^2.2.7",
-        "zod": "^3.24.2",
+        "@anatine/zod-openapi": "^2.2.8",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "concurrently": "^9.1.2",
         "tsc-alias": "^1.8.12",
-        "typescript": "^5.8.2",
+        "typescript": "^5.9.3",
       },
     },
   },
   "packages": {
     "@anatine/zod-openapi": ["@anatine/zod-openapi@2.2.8", "", { "dependencies": { "ts-deepmerge": "^6.0.3" }, "peerDependencies": { "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-iyM8mB556KdiZ6a1GTZ67ACLnJakU1hrzzXoh7PLaReldAdMq88MlZn/Ir/U56/TBuQctBhh/4seo0b0B343uw=="],
-
-    "@boilerplate/openapi": ["@boilerplate/openapi@workspace:packages/openapi"],
-
-    "@boilerplate/zod": ["@boilerplate/zod@workspace:packages/zod"],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.10", "", { "os": "aix", "cpu": "ppc64" }, "sha512-0NFWnA+7l41irNuaSVlLfgNT12caWJVLzp5eAVhZ0z1qpxbockccEt3s+149rE64VUI3Ml2zt8Nv5JVc4QXTsw=="],
 
@@ -111,6 +108,10 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.25.10", "", { "os": "win32", "cpu": "ia32" }, "sha512-QHPDbKkrGO8/cz9LKVnJU22HOi4pxZnZhhA2HYHez5Pz4JeffhDjf85E57Oyco163GnzNCVkZK0b/n4Y0UHcSw=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.10", "", { "os": "win32", "cpu": "x64" }, "sha512-9KpxSVFCu0iK1owoez6aC/s/EdUQLDN3adTxGCqxMVhrPDj6bt5dbrHDXUuq+Bs2vATFBBrQS5vdQ/Ed2P+nbw=="],
+
+    "@foundry/openapi": ["@foundry/openapi@workspace:packages/openapi"],
+
+    "@foundry/zod": ["@foundry/zod@workspace:packages/zod"],
 
     "@hapi/address": ["@hapi/address@5.1.1", "", { "dependencies": { "@hapi/hoek": "^11.0.2" } }, "sha512-A+po2d/dVoY7cYajycYI43ZbYMXukuopIsqCjh5QzsBCipDtdofHntljDlpccMjIfTy6UOkg+5KPriwYch2bXA=="],
 
@@ -469,10 +470,6 @@
     "yargs-parser": ["yargs-parser@21.1.1", "", {}, "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="],
 
     "zod": ["zod@4.1.12", "", {}, "sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ=="],
-
-    "@boilerplate/openapi/zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
-
-    "@boilerplate/zod/zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
 
     "@ts-rest/open-api/@anatine/zod-openapi": ["@anatine/zod-openapi@1.14.2", "", { "dependencies": { "ts-deepmerge": "^6.0.3" }, "peerDependencies": { "openapi3-ts": "^2.0.0 || ^3.0.0", "zod": "^3.20.0" } }, "sha512-q0qHfnuNYVKu0Swrnnvfj9971AEyW7c8v9jCOZGCl5ZbyGMNG4RPyJkRcMi/JC8CRfdOe0IDfNm1nNsi2avprg=="],
 
