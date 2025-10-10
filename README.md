@@ -36,7 +36,7 @@ go-boilerplate/
 
 ### Installation
 ```bash
-git clone https://github.com/sriniously/go-boilerplate.git
+git clone https://github.com/brij-812/go-Foundry.git
 cd go-boilerplate
 
 # Frontend deps
