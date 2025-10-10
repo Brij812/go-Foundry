@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	handler "github.com/brij812/go-Foundry/internal/handler"
-	"github.com/brij812/go-Foundry/internal/middleware"
+	middleware "github.com/brij812/go-Foundry/internal/middleware"
 	"github.com/brij812/go-Foundry/internal/server"
 	"github.com/brij812/go-Foundry/internal/service"
 	"github.com/labstack/echo/v4"
